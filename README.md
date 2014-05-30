@@ -23,6 +23,10 @@ A Puppet report handler for sending notifications of puppet runs to
 
 1. Run the Puppet client and sync the report as a plugin
 
+## Screenshot
+
+![image](https://raw.githubusercontent.com/fsalum/puppet-slack/master/puppet-slack.png)
+
 ## Author
 
 Felipe Salum <fsalum@gmail.com>
