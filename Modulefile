@@ -1,4 +1,4 @@
-name 'puppet-slack'
+name 'fsalum-slack'
 version '0.0.1'
 source 'git://github.com/fsalum/puppet-slack.git'
 author 'Felipe Salum'
