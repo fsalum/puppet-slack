@@ -27,7 +27,7 @@ Puppet::Reports.register_report(:slack) do
 
       conn.post do |req|
           req.url "/services/hooks/incoming-webhook?token=#{SLACK_TOKEN}"
-          req.body = "{\"channel\":\"#{SLACK_CHANNEL}\",\"username\":\"#{SLACK_BOTNAME}\", \"icon_url\":\"#{SLACK_ICONURL}\",\"text\":\"Puppet run for #{self.host} #{self.status} at #{Time.now.asctime}\"}"
+          req.body = "{\"channel\":\"#{SLACK_CHANNEL}\",\"username\":\"#{SLACK_BOTNAME}\", \"icon_url\":\"#{SLACK_ICONURL}\",\"text\":\"Puppet run for #{self.host} `#{self.status}` at #{Time.now.asctime}\"}"
       end
     end
   end
