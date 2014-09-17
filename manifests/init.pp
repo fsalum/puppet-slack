@@ -6,6 +6,7 @@ class slack (
   $slack_channel        = '#puppet',
   $slack_botname        = 'puppet',
   $slack_puppet_reports = undef,
+  $slack_puppet_dir     = '/etc/puppet'
 ) {
 
   package { 'faraday':
@@ -13,8 +14,7 @@ class slack (
     provider => gem,
   }
 
-  file { '/etc/puppet/slack.yaml':
-    path    => '/etc/puppet/slack.yaml',
+  file { "${slack_puppet_dir}/slack.yaml":
     owner   => root,
     group   => root,
     mode    => '0644',
@@ -24,7 +24,7 @@ class slack (
   if $slack_puppet_reports {
     ini_setting { 'slack_puppet_reports':
       ensure  => present,
-      path    => '/etc/puppet/puppet.conf',
+      path    => "${slack_puppet_dir}/puppet.conf",
       section => 'master',
       setting => 'reports',
       value   => $slack_puppet_reports,
