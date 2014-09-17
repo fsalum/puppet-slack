@@ -20,6 +20,7 @@ A Puppet report handler for sending notifications of puppet runs to
            slack_iconurl        => 'http://puppetlabs.com/wp-content/uploads/2010/12/PL_logo_vertical_RGB_lg.jpg',
            slack_puppet_reports => 'store,http,slack',
          }
+  you might also want to set `slack_puppet_dir => '/etc/puppetlabs/puppet'` if you use puppet enterprise.
 
 1. Run the Puppet client and sync the report as a plugin
 
