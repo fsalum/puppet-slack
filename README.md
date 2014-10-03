@@ -14,6 +14,7 @@ A Puppet report handler for sending notifications of puppet runs to
 1. Add the class to the puppet master node:
 
          class { 'slack':
+           slack_url            => 'YOUR_SLACK_URL',
            slack_token          => 'INCOMING_WEBHOOK_TOKEN',
            slack_channel        => '#puppet',
            slack_botname        => 'puppet',
