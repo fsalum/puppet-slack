@@ -5,7 +5,6 @@
   "author": "Felipe Salum",
   "license": "Apache 2.0",
   "summary": "Slack.com integration for Puppet report processor",
-  "description": "Puppet report processor for sending notifications of puppet runs to Slack Messaging.",
   "project_page": "https://github.com/fsalum/puppet-slack",
   "issues_url": "https://github.com/fsalum/puppet-slack/issues",
   "tags": ["slack", "chat", "messaging", "communication"],

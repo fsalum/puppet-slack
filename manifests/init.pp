@@ -17,7 +17,7 @@ class slack (
       ensure   => installed,
       provider => gem,
       require  => Anchor['slack::begin'],
-      before => File["${slack_puppet_dir}/slack.yaml"],
+      before   => File["${slack_puppet_dir}/slack.yaml"],
     }
   }else {
     include check_run
@@ -25,8 +25,8 @@ class slack (
       'redhat','debian': {
         check_run::task { 'task_faraday_gem_install':
           exec_command => '/usr/bin/puppetserver gem install faraday',
-          require => Anchor['slack::begin'],
-          before => File["${slack_puppet_dir}/slack.yaml"],
+          require      => Anchor['slack::begin'],
+          before       => File["${slack_puppet_dir}/slack.yaml"],
         }
       }
       default: {
