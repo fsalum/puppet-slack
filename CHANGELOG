@@ -1,0 +1,15 @@
+## fsalum-slack changelog
+
+Release notes for the fsalum-slack module.
+
+------------------------------------------
+
+#### 0.0.2 - 2014-10-25
+
+* PR #1 - Changes to make module useable with puppet enterprise (@despairblue)
+* PR #2 - Update README.md (@s33dunda)
+* PR #6 - Added support for puppetserver and also redhat & debian os families. (@Conzar)
+
+#### 0.0.1 - 2014-05-30
+
+* Initial Forge release
