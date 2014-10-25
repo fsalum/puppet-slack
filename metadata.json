@@ -1,0 +1,23 @@
+{
+  "author": "Felipe Salum",
+  "license": "Apache 2.0",
+  "name": "fsalum-slack",
+  "project_page": "https://github.com/fsalum/puppet-slack",
+  "requirements": [],
+  "source": "git://github.com/fsalum/puppet-slack.git",
+  "summary": "Slack.com integration for Puppet report processor",
+  "tags": [],
+  "version": "0.0.2",
+  "operatingsystem_support": [
+  	{ "operatingsystem":"Centos",
+	  "operatingsystemrelease":[ "5.0", "6.0" ] },
+  	{ "operatingsystem": "Ubuntu",
+  	  "operatingsystemrelease": [ "12.04", "14.04" ] }
+	],
+  "dependencies": [
+    {
+      "name": "conzar/check_run",
+      "version_requirement": ">= 0.2.3"
+    }
+  ]
+}

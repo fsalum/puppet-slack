@@ -6,12 +6,33 @@ class slack (
   $slack_channel        = '#puppet',
   $slack_botname        = 'puppet',
   $slack_puppet_reports = undef,
-  $slack_puppet_dir     = '/etc/puppet'
+  $slack_puppet_dir     = '/etc/puppet',
+  $is_puppetmaster      = true,
 ) {
+  
+  anchor {'slack::begin':}
 
-  package { 'faraday':
-    ensure   => installed,
-    provider => gem,
+  if $is_puppetmaster == true {
+    package { 'faraday':
+      ensure   => installed,
+      provider => gem,
+      require  => Anchor['slack::begin'],
+      before => File["${slack_puppet_dir}/slack.yaml"],
+    }
+  }else {
+    include check_run
+    case $::osfamily {
+      'redhat','debian': {
+        check_run::task { 'task_faraday_gem_install':
+          exec_command => '/usr/bin/puppetserver gem install faraday',
+          require => Anchor['slack::begin'],
+          before => File["${slack_puppet_dir}/slack.yaml"],
+        }
+      }
+      default: {
+        fail("Unsupported osfamily ${::osfamily}")
+      }
+    }
   }
 
   file { "${slack_puppet_dir}/slack.yaml":
@@ -28,7 +49,11 @@ class slack (
       section => 'master',
       setting => 'reports',
       value   => $slack_puppet_reports,
+      require => File [ "${slack_puppet_dir}/slack.yaml"],
+      before  => Anchor['slack::end'],
     }
   }
-
+  anchor{'slack::end':
+    require => File [ "${slack_puppet_dir}/slack.yaml"],
+  }
 }
