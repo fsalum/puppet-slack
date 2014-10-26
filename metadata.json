@@ -10,11 +10,17 @@
   "tags": ["slack", "chat", "messaging", "communication"],
   "requirements": [],
   "operatingsystem_support": [
-  	{ "operatingsystem":"Centos",
-	  "operatingsystemrelease":[ "5.0", "6.0" ] },
-  	{ "operatingsystem": "Ubuntu",
-  	  "operatingsystemrelease": [ "12.04", "14.04" ] }
-	],
+    { "operatingsystem":"Centos",
+      "operatingsystemrelease":[ "5.0", "6.0" ] },
+    { "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "12.04", "14.04" ] }
+  ],
+  "requirements": [
+    { "name": "pe",
+      "version_requirement": "3.x" },
+    { "name": "puppet",
+      "version_requirement": "3.x" }
+  ],
   "dependencies": [
     {
       "name": "conzar/check_run",
