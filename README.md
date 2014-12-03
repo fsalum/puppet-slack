@@ -1,4 +1,5 @@
-# puppet-slack [![Build Status](https://travis-ci.org/fsalum/puppet-slack.svg?branch=master)](https://travis-ci.org/fsalum/puppet-slack)
+# puppet-slack
+[![puppet-slack](https://img.shields.io/puppetforge/v/fsalum/slack.svg)](https://forge.puppetlabs.com/fsalum/slack) [![Build Status](https://travis-ci.org/fsalum/puppet-slack.svg?branch=master)](https://travis-ci.org/fsalum/puppet-slack)
 
 ## Description
 
